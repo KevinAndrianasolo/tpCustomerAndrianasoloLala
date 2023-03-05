@@ -7,7 +7,6 @@
         <title>Liste des clients</title>
     </h:head>
     <h:body>
-        Liste des clients :
         <h:dataTable value="#{customerBean.customers}"
                var="item"  >
             <h:column>
@@ -26,7 +25,13 @@
                 <f:facet name="header">
                     <h:outputText value="Ville"/>
                 </f:facet>
-                <h:outputText value="${item.city}"/>
+                <h:outputText value="#{item.city}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Code de réduction"/>
+                </f:facet>
+                <h:outputText value="#{item.discount}"/>
             </h:column>
         </h:dataTable>
     </h:body>
