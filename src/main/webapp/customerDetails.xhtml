@@ -41,10 +41,14 @@
                     title="Discount" required="true" requiredMessage="The Discount field is required.">
                     <f:selectItems value="#{customerDetailsBean.discounts}"
                                    var="discount"
-                                   itemLabel="#{discount.code} : #{discount.rate}" 
+                                   itemLabel="#{discount.code} : #{discount.rate}%" 
                                    itemValue="#{discount}"/>
                 </h:selectOneMenu>
+                <h:button id="back" value="Revenir à la liste" outcome="customerList"/>
+                <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update}"/>
             </h:panelGrid>
+             <h:messages style = "color:red;margin:8px;" />
         </h:form>
+
     </h:body>
 </html>
